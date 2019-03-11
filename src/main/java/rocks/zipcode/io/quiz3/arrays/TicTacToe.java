@@ -35,9 +35,7 @@ public class TicTacToe {
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        if (*arr[i] == arr[i][1] && arr[i][1] == arr[i][2])
-        if ((ret = *arr[i]) != 'T')
-        return ret;
+        
         return null;
     }
 
