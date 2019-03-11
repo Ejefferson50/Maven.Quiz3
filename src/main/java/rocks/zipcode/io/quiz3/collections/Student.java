@@ -8,11 +8,15 @@ import java.util.Map;
  * @author leon on 10/12/2018.
  */
 public class Student {
+    Map<Lab, LabStatus> studentMap;
+
+
     public Student() {
         this(null);
     }
 
     public Student(Map<Lab, LabStatus> map) {
+        this.studentMap = map;
     }
 
     public Lab getLab(String labName) {
@@ -20,6 +24,7 @@ public class Student {
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
+
     }
 
 
