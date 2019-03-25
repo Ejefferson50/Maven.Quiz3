@@ -1,6 +1,8 @@
 package rocks.zipcode.io.quiz3.generics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -17,18 +19,38 @@ public class ArrayUtility<SomeType> {
         this.array = array;
     }
 
-    public SomeType findOddOccurringValue() { return null; }
+    public SomeType findOddOccurringValue() {
+        for (SomeType type : array) {
+            if (getNumberOfOccurrences(type) % 2 == 1) {
+                return type;
+            }
+        }
+        return null;
+    }
 
     public SomeType findEvenOccurringValue() {
+        for (SomeType type : array) {
+            if (getNumberOfOccurrences(type) % 2 == 0) {
+                return type;
+            }
+        }
         return null;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        int counter = 0;
+        for (SomeType type : array) {
+            if (valueToEvaluate.equals(type)) {
+                counter++;
+            }
+        }
+        return counter;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-      return null;
+        return Arrays.stream(array)
+                .filter(element -> predicate.apply(element))
+                .toArray(size -> Arrays.copyOf(array, size));
 
     }
 

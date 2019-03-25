@@ -7,6 +7,13 @@ import java.util.*;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
+
+        /*
+        Nhu
+        String beginning = str.substring(0, indexToCapitalize);
+        Character upperCase = Character.toUpperCase(str.charAt(indexToCaptialize));
+        String ending = str.substring(indexToCapitalize + 1))
+         */
         String string = "";
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
@@ -16,9 +23,10 @@ public class StringUtils {
                 string += c;
             }
         }
-
         return string;
+
     }
+
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
         if (baseString.charAt(indexOfString) == characterToCheckFor) {
@@ -40,10 +48,11 @@ public class StringUtils {
                 checkDupes.add(s);
             }
         }
+        //Set<String> = new HashSet()<result>;
         return checkDupes.toArray(new String[0]);
     }
 
-    public static Integer getNumberOfSubStrings(String input){
+    public static Integer getNumberOfSubStrings(String input) {
         return getAllSubStrings(input).length;
     }
 }
